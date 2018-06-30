@@ -1,12 +1,16 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Net.Http;
+using System.Web.Http;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
 using TodoApi.Models;
 using TodoAPi.Models;
+using Microsoft.AspNetCore.Cors;
 
 namespace TodoApi.Controllers
 {
     [Route("api/[controller]")]
+    [EnableCors("AllowFromAll")]
     [ApiController]
     public class TodoController : ControllerBase
     {

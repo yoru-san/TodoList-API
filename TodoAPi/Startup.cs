@@ -10,6 +10,10 @@ namespace TodoApi
     {
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowFromAll", builder => builder.WithOrigins("*"));
+            });
             services.AddDbContext<TodoContext>(opt =>
                 opt.UseInMemoryDatabase("TodoList"));
             services.AddMvc()
